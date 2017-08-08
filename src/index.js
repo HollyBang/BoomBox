@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+
+import BasicExample from './routes';
 
 ReactDOM.render(
-  <App />, document.getElementById('root')
+  <BasicExample />, document.getElementById('root')
 );
