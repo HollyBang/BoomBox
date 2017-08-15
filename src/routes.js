@@ -22,6 +22,7 @@ const BasicExample = () => (
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/about" component={About} />
+      {/* сделать роут логин с редиректом на "/"  ez. window.location in componentDidMount worked.*/}
         <Route component={NotFound}/>
       </Switch>
     </div>
