@@ -2,26 +2,23 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Switch,
+  Switch
 } from 'react-router-dom';
 
 
 import App from './components/App';
 import About from './components/About';
 import NotFound from './components/NotFound';
+import Header from './components/Header';
 
-const BasicExample = () => (
+const AppRouter = () => (
   <Router>
     <div>
-      {/* <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
-      </ul> */}
+      <Header />
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/about" component={About} />
+        <Route path="/login" />
       {/* сделать роут логин с редиректом на "/"  ez. window.location in componentDidMount worked.*/}
         <Route component={NotFound}/>
       </Switch>
@@ -29,4 +26,4 @@ const BasicExample = () => (
   </Router>
 )
 
-export default BasicExample;
+export default AppRouter;

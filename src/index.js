@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import BasicExample from './routes';
+import AppRouter from './routes';
 
 ReactDOM.render(
-  <BasicExample />, document.getElementById('root')
+  <AppRouter />, document.getElementById('root')
 );

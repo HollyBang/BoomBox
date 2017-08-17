@@ -1,14 +1,14 @@
 'use strict';
 
 
-var express = require('express'); 
-var request = require('request'); 
+var express = require('express'); // Express web server framework
+var request = require('request'); // "Request" library
 const path = require('path');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = ''; // Your client id
-var client_secret = ''; // Your secret
+var client_id = '53061605254f4d0dabc30b955189a78a'; // Your client id
+var client_secret = '77b866a65fda4f60bb7347b4fe9d4710'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback/'; // Your redirect uri
 
 /**

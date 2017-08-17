@@ -15,28 +15,29 @@ class Profile extends Component {
     artist = this.props.artist !== null ? this.props.artist : artist;
 
     return (
-      <div className="profile">
-        <img className="profile-img" src={artist.images[0].url} alt="Profile" />
-        <div className="profile-info">
-          <div className="profile-name">{artist.name}</div>
-          <div className="profile-followers">
-            Followers {artist.followers.total}
-          </div>
-          <div className="profile-genres">
+      <div className='card'>
+        <div className='card_left'>
+          <img src={artist.images[0].url} alt="Profile" />
+        </div>
+        <div className='card_right'>
+          <h1>{artist.name}</h1>
+          <div className='card_right__details'>
             {
-              artist.genres.map((genre, k) => {
+              artist.genres.map((genre, i) => {
                 genre = genre !== artist.genres[artist.genres.length - 1] ? ` ${genre},` : ` & ${genre}`;
                 return (
-                  <span key={k}>{genre} </span>
+                  <span key={i}>{genre} </span>
                 )
               })
             }
           </div>
         </div>
-
       </div>
     );
   }
 }
 
 export default Profile;
+
+
+

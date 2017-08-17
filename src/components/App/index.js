@@ -7,6 +7,7 @@ import {
   Glyphicon
 } from 'react-bootstrap';
 import Profile from './../Profile';
+import Gallery from './../Gallery';
 
 class App extends Component {
   constructor(props) {
@@ -37,8 +38,9 @@ class App extends Component {
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
-    // let accessToken = this.state.accToken;
-    let accessToken = 'BQBVgVNhtiPf-6Fdg0xhgq0Me4GJjENe4ur-y5FWYe8unevWMDFgFKvkPdvD54Z2OQzqYOHMcOP0fIPDtrgQ7usUxqxRIGeajh3qm8j0o3AmzXgO7JM2P2uqHhX44B10zuv0ddO7GMvXBH3aqL2XCPubBUJCSqpiw-ixhqnTT_cFtGfRPNM';
+    let accessToken = this.state.accToken;
+    // let accessToken = 'BQA5PE6e0vmlJwnSTEQNDDc1zySyR5P7VqhswinkA9mr55_bMHBnp32DCb-ETHUvNF_63WeKHk9016yER92XbKjvev5q3sju7nb0CxQupaE8PdwIMOgjwdrb6UG-dVqhoQjMfiWD-J-wYgPuErwHjN2FFfpj6kUpXAwC9hOLYyMM0YY0cR0';
+    //refactor fetch OPTIONS!!!!!
     fetch(FETCH_URL, {
       method: 'GET',
       headers: {
@@ -100,9 +102,7 @@ class App extends Component {
               <Profile
                 artist={this.state.artist}
               />
-              <div className="Gallery">
-                Gallery
-              </div>
+              <Gallery tracks={this.state.tracks} />
             </div>
             : <div></div>
         }
