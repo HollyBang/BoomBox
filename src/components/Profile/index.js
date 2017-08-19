@@ -24,7 +24,7 @@ class Profile extends Component {
           <div className='card_right__details'>
             {
               artist.genres.map((genre, i) => {
-                genre = genre !== artist.genres[artist.genres.length - 1] ? ` ${genre},` : ` & ${genre}`;
+                genre = genre !== artist.genres[artist.genres.length - 1] ? ` ${genre},` : `  ${genre}`;
                 return (
                   <span key={i}>{genre} </span>
                 )
