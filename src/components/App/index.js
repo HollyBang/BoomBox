@@ -38,8 +38,8 @@ class App extends Component {
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
-    let accessToken = this.state.accToken;
-    // let accessToken = 'BQA5PE6e0vmlJwnSTEQNDDc1zySyR5P7VqhswinkA9mr55_bMHBnp32DCb-ETHUvNF_63WeKHk9016yER92XbKjvev5q3sju7nb0CxQupaE8PdwIMOgjwdrb6UG-dVqhoQjMfiWD-J-wYgPuErwHjN2FFfpj6kUpXAwC9hOLYyMM0YY0cR0';
+    // let accessToken = this.state.accToken;
+    let accessToken = 'BQBmqZa76xWgBMy1R8S9mWsYbT2HL1QQWZ-YLKgbz4I2XgQRfEYO4uUnpiDQYsu8Zn1MuneXIZRi_r6rjE1swDUenz3dACXpexESAX4066VuR9wC42Z-ZdlYDYF818rBsjAcSGzplBKCLcxeS8eFxNk-aEdHTNb0D8HTBMeBmXfpwxbPk4o';
     //refactor fetch OPTIONS!!!!!
     fetch(FETCH_URL, {
       method: 'GET',
