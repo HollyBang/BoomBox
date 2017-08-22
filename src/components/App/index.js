@@ -53,7 +53,7 @@ class App extends Component {
         const total = json.artists.total;
         const artist = json.artists.items[0];
         this.setState({ artist });
-        console.log('json in app ', json);
+     
 
         if (total !== 0) {
           FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
