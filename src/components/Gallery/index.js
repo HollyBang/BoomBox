@@ -46,7 +46,6 @@ class Gallery extends Component {
     return (
       <div>
         {tracks.map((track, i) => {
-          console.log('track', track);
           const trackImg = track.album.images[0].url;
           return (
             <div key={i} className="track" onClick={() => this.playTrack(track.preview_url)}>

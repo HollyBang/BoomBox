@@ -12,8 +12,9 @@ class Profile extends Component {
       images: [{ url: '' }],
       genres: []
     };
-    artist = this.props.artist !== null ? this.props.artist : artist;
-
+    console.log('profile img ', this.props);
+    artist = this.props.artist !== undefined ? this.props.artist : artist;
+    
     return (
       <div className='card'>
         <div className='card_left'>

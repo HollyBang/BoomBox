@@ -34,12 +34,11 @@ class App extends Component {
   }
 
   search() {
-    console.log(this.state);
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
     // let accessToken = this.state.accToken;
-    let accessToken = 'BQBmqZa76xWgBMy1R8S9mWsYbT2HL1QQWZ-YLKgbz4I2XgQRfEYO4uUnpiDQYsu8Zn1MuneXIZRi_r6rjE1swDUenz3dACXpexESAX4066VuR9wC42Z-ZdlYDYF818rBsjAcSGzplBKCLcxeS8eFxNk-aEdHTNb0D8HTBMeBmXfpwxbPk4o';
+    let accessToken = 'BQD-Ugmunfkq0n6Tzjig_Mfp1ZWZEw5uwUGMLq0KIoQGi8TaqNqwB_MiwaVPU-bRXjN0TU0WVkljgO0kvpIVeXqKnt9eFFPkncyfgaXrkBjv6O8f_73ReT9vXMZ5EmByolsQOSPuwGNFRH-lEqm6wL95dk-1yNFPhgKZiC3p8J2zpaMoXZ4';
     //refactor fetch OPTIONS!!!!!
     fetch(FETCH_URL, {
       method: 'GET',
@@ -51,25 +50,28 @@ class App extends Component {
     })
       .then(response => response.json())
       .then(json => {
+        const total = json.artists.total;
         const artist = json.artists.items[0];
         this.setState({ artist });
+        console.log('json in app ', json);
 
-        FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
-        console.log(FETCH_URL);
-        fetch(FETCH_URL, {
-          method: 'GET',
-          headers: {
-            'Authorization': 'Bearer ' + accessToken
-          },
-          mode: 'cors',
-          cache: 'default'
-        })
-          .then(response => response.json())
-          .then(json => {
-            console.log('artist top track: ', json);
-            const { tracks } = json;
-            this.setState({tracks});
+        if (total !== 0) {
+          FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
+          fetch(FETCH_URL, {
+            method: 'GET',
+            headers: {
+              'Authorization': 'Bearer ' + accessToken
+            },
+            mode: 'cors',
+            cache: 'default'
           })
+            .then(response => response.json())
+            .then(json => {
+              const { tracks } = json;
+              this.setState({ tracks });
+            })
+        }
+
       });
   }
 
