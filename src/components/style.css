@@ -16,33 +16,6 @@ body {
   font-size: 26px;
 }
 
-/* .profile {
-  display: flex;
-  justify-content: center;
-}
-.profile-info {
-  margin-left: 10px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border: 3px solid #fff;
-  border-radius: 75px;
-  object-fit: cover;
-}
-
-.profile-name {
-  font-size: 26px;
-}
-.profile-followers,
-.profile-genres {
-  font-size: 18px;
-} */
 .card {
   width: 400px;
   height: 200px;
@@ -116,6 +89,25 @@ body {
   padding: 10px;
 }
 
+.track-play {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+}
+.track-play-inner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 45px;
+  left: 54px;
+  background: url('./../img/test1.svg') no-repeat;
+}
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate infinite;
+}
+
 .track:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
@@ -182,6 +174,24 @@ body {
 #navigation-purple .navbar-toggle:focus {
    background-color: transparent;
 }
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 767px) {
 
