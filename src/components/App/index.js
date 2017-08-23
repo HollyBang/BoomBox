@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import './../style.css';
-import {
-  FormGroup,
-  FormControl,
-  InputGroup,
-  Glyphicon
-} from 'react-bootstrap';
 import Profile from './../Profile';
 import Gallery from './../Gallery';
 
@@ -38,7 +32,7 @@ class App extends Component {
     let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
     // let accessToken = this.state.accToken;
-    let accessToken = 'BQD-Ugmunfkq0n6Tzjig_Mfp1ZWZEw5uwUGMLq0KIoQGi8TaqNqwB_MiwaVPU-bRXjN0TU0WVkljgO0kvpIVeXqKnt9eFFPkncyfgaXrkBjv6O8f_73ReT9vXMZ5EmByolsQOSPuwGNFRH-lEqm6wL95dk-1yNFPhgKZiC3p8J2zpaMoXZ4';
+    let accessToken = 'BQAdhlEN6ZE4L64DyaIQd6CLmSjCel9lgTE_xwNG_w-X4sqQj3g5S0hmgTfpG2iZ12JYi-rMNESv_hY318d_FwAaSYf2RxX_shyywAQ2NTCuLn14YO5avnfCkjlRLXHYwqJtV9hlgrwAkoL3XrBawZ9fjbCx2SXEGwYUXjviD0S1PYZQP60';
     //refactor fetch OPTIONS!!!!!
     fetch(FETCH_URL, {
       method: 'GET',
@@ -53,7 +47,7 @@ class App extends Component {
         const total = json.artists.total;
         const artist = json.artists.items[0];
         this.setState({ artist });
-     
+
 
         if (total !== 0) {
           FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
@@ -79,24 +73,26 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-title">BoomBox</div>
-        <FormGroup>
-          <InputGroup>
-            <FormControl
-              type="text"
-              placeholder="Search for an Artist"
-              value={this.state.query}
-              onChange={event => { this.setState({ query: event.target.value }) }}
-              onKeyPress={event => {
-                if (event.key === 'Enter') {
-                  this.search()
-                }
-              }}
-            />
-            <InputGroup.Addon onClick={() => this.search()}>
-              <Glyphicon glyph="search"></Glyphicon>
-            </InputGroup.Addon>
-          </InputGroup>
-        </FormGroup>
+        <div className="form-group">
+          <input className="search-box"
+            name="q"
+            size="40"
+            type="text"
+            placeholder="Search"
+            value={this.state.query}
+            onChange={event => { this.setState({ query: event.target.value }) }}
+            onKeyPress={event => {
+              if (event.key === 'Enter') {
+                this.search()
+              }
+            }} />
+          <input className="search-btn"
+            value="Go"
+            type="submit"
+            onClick={() => this.search()} />
+
+        </div>
+
         {
           this.state.artist !== null
             ?
