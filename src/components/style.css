@@ -100,7 +100,7 @@ body {
   height: 100px;
   top: 45px;
   left: 54px;
-  background: url('./../img/test1.svg') no-repeat;
+
 }
 .path {
   stroke-dasharray: 1000;
@@ -120,6 +120,7 @@ body {
   background-color: #7a60e9;
   border: none;
   border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #navigation-purple .nav {
@@ -174,6 +175,37 @@ body {
 #navigation-purple .navbar-toggle:focus {
    background-color: transparent;
 }
+
+.form-group {
+  display: inline-block;
+  margin-bottom: 20px;
+  
+}
+.search-btn {
+  background:#7a60e9;
+  color:white;
+  padding:10px 20px;
+  border-radius:0 5px 5px 0;
+  -moz-border-radius:0 5px 5px 0;
+  -webkit-border-radius:0 5px 5px 0;
+  -o-border-radius:0 5px 5px 0;
+  border:0 none;
+  font-weight:bold;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+   
+  .search-box {
+  background: #eee;
+  padding:10px;
+   border-radius:5px 0 0 5px;
+  -moz-border-radius:5px 0 0 5px;
+  -webkit-border-radius:5px 0 0 5px;
+  -o-border-radius:5px 0 0 5px;
+  border:0 none;
+  max-width:460px;
+  color: #7a60e9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   }
 
 @keyframes dash {
   from {
