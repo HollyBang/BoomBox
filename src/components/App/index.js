@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './../style.css';
 import Profile from './../Profile';
 import Gallery from './../Gallery';
+import equalizerBoomBox from './../../img/BoomBox.svg';
 
 class App extends Component {
   constructor(props) {
@@ -72,7 +73,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-title">BoomBox</div>
+        <div className="App-title">
+        <img className="imgsda" src={equalizerBoomBox} alt="BoomBox" />
+        </div>
+
         <div className="form-group">
           <input className="search-box"
             name="q"

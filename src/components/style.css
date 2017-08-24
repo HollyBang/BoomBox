@@ -12,8 +12,11 @@ body {
   padding: 5px;
 }
 
-.App-title {
-  font-size: 26px;
+.eequalizer{
+  width: 120px;
+  height: 30px;
+  display: block;
+  background: url('./../img/BoomBox.svg') no-repeat;
 }
 
 .card {
@@ -206,6 +209,8 @@ body {
   color: #7a60e9;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
    }
+
+
 
 @keyframes dash {
   from {
