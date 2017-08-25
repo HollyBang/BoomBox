@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import './../style.css';
 import logo from './../../img/logoedit.svg';
 
-class Header extends Component {
-  render() {
+const Header = () => {
     return (
       <div>
         <nav className="navbar navbar-default" id="navigation-purple">
@@ -30,6 +29,5 @@ class Header extends Component {
       </div>
     );
   }
-}
 
 export default Header;
