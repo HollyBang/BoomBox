@@ -34,15 +34,15 @@ class App extends Component {
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
     // let accessToken = this.state.accToken;
     let accessToken = 'BQAdhlEN6ZE4L64DyaIQd6CLmSjCel9lgTE_xwNG_w-X4sqQj3g5S0hmgTfpG2iZ12JYi-rMNESv_hY318d_FwAaSYf2RxX_shyywAQ2NTCuLn14YO5avnfCkjlRLXHYwqJtV9hlgrwAkoL3XrBawZ9fjbCx2SXEGwYUXjviD0S1PYZQP60';
-    //refactor fetch OPTIONS!!!!!
-    fetch(FETCH_URL, {
+    const fetchOptions = {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + accessToken
       },
       mode: 'cors',
       cache: 'default'
-    })
+    };
+    fetch(FETCH_URL, fetchOptions)
       .then(response => response.json())
       .then(json => {
         const total = json.artists.total;
@@ -52,14 +52,7 @@ class App extends Component {
 
         if (total !== 0) {
           FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
-          fetch(FETCH_URL, {
-            method: 'GET',
-            headers: {
-              'Authorization': 'Bearer ' + accessToken
-            },
-            mode: 'cors',
-            cache: 'default'
-          })
+          fetch(FETCH_URL, fetchOptions)
             .then(response => response.json())
             .then(json => {
               const { tracks } = json;
