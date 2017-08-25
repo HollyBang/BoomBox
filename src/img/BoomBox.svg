@@ -39,7 +39,7 @@
 				values="3; 17; 10; 21; 11"
       	keyTimes="0; 0.2; 0.5; 0.8; 1"/>
     </rect>
-		<rect x="92" y="0" clip-path="url(#SVGID_2_)" fill="#FF9015" width="16" height="30">
+		<rect x="92" y="0" clip-path="url(#SVGID_2_)" fill="#00D44E" width="16" height="30">
       <animate attributeName="y" begin="0s" dur="1s" repeatCount="indefinite" from="10" to="80" 
 				values="18; 4; 21; 0; 12"
         keyTimes="0; 0.3; 0.5; 0.7; 1"/>

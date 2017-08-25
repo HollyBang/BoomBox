@@ -11,13 +11,10 @@ body {
   text-align: center;
   padding: 5px;
 }
-
-.eequalizer{
-  width: 120px;
-  height: 30px;
-  display: block;
-  background: url('./../img/BoomBox.svg') no-repeat;
+.equalizer-svg {
+  width: 130px;
 }
+
 
 .card {
   width: 400px;

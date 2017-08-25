@@ -74,7 +74,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-title">
-        <img className="imgsda" src={equalizerBoomBox} alt="BoomBox" />
+          <img className="equalizer-svg" src={equalizerBoomBox} alt="BoomBox" />
         </div>
 
         <div className="form-group">
