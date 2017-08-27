@@ -32,8 +32,8 @@ class App extends Component {
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
-    // let accessToken = this.state.accToken;
-    let accessToken = 'BQAdhlEN6ZE4L64DyaIQd6CLmSjCel9lgTE_xwNG_w-X4sqQj3g5S0hmgTfpG2iZ12JYi-rMNESv_hY318d_FwAaSYf2RxX_shyywAQ2NTCuLn14YO5avnfCkjlRLXHYwqJtV9hlgrwAkoL3XrBawZ9fjbCx2SXEGwYUXjviD0S1PYZQP60';
+    let accessToken = this.state.accToken;
+    
     const fetchOptions = {
       method: 'GET',
       headers: {
@@ -75,7 +75,7 @@ class App extends Component {
             name="q"
             size="40"
             type="text"
-            placeholder="Search"
+            placeholder="Search an artists. (for example Manowar)"
             value={this.state.query}
             onChange={event => { this.setState({ query: event.target.value }) }}
             onKeyPress={event => {
